@@ -1,0 +1,27 @@
+<form [formGroup]="form">
+    <div mat-dialog-content>
+        <h1 mat-dialog-title>Update Service</h1>
+        <p mat-dialog-title class="text-muted">Please Complete The Form</p>
+
+        <mat-form-field appearance="fill" class="w-100">
+            <mat-label>Service Title</mat-label>
+            <input matInput formControlName="serviceTitle" placeholder="Please enter your service title" required />
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="w-100">
+            <mat-label>Description</mat-label>
+            <input matInput formControlName="description" placeholder="Please enter your description" required />
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="w-100">
+            <mat-label>Icon</mat-label>
+            <input matInput formControlName="icon" placeholder="Please enter your icon" required />
+        </mat-form-field>
+
+    </div>
+
+    <div mat-dialog-actions>
+        <button mat-button (click)="onCancel()">Cancel</button>
+        <button mat-button (click)="onSubmit()">Update</button>
+    </div>
+</form>

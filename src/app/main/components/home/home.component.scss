@@ -1,0 +1,21 @@
+.logo {
+    width: 250px;
+}
+
+#home {
+    height: 90vh;
+}
+
+
+
+.btn-primary:hover {
+    transform: scale(1.1);
+}
+
+.text-primary {
+    background: linear-gradient(to right, #0dcaf0, #20c997);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent !important;
+
+}

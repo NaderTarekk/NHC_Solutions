@@ -1,0 +1,40 @@
+<!-- Service Start -->
+<div class="container-fluid bg-light my-5 py-6" id="service">
+    <div class="container">
+        <div class="row g-5 mb-5 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="col-lg-6">
+                <h1 class="display-5 mb-0">Our Services</h1>
+            </div>
+            <div class="col-lg-6 text-lg-end">
+                <a class="btn btn-primary py-3 px-5" href="">Hire Me</a>
+            </div>
+        </div>
+
+        <button *ngIf="token != null" mat-raised-button class="mb-3 btn btn-primary"
+            (click)="openServiceDialog()">Create New Service <i class="fa-solid fa-circle-plus"></i></button>
+
+        <div class="row g-4">
+            <div class="col-lg-6 wow fadeInUp" *ngFor="let ser of services" data-wow-delay="0.1s">
+                <div class="service-item d-flex flex-column flex-sm-row bg-white rounded h-100 p-4 p-lg-5">
+                    <div class="bg-icon flex-shrink-0 mb-3">
+                        <i class="{{ ser.icon }} fa-2x text-dark"></i>
+                    </div>
+                    <div class="ms-sm-4">
+                        <h4 class="mb-3">{{ ser.serviceTitle }}</h4>
+                        <span class="mb-4">{{ ser.description }}</span><br>
+                        <button *ngIf="token != null" class="btn btn-warning mt-3 mx-2"
+                            (click)="openUpdateServiceDialog(ser)"><i class="fa-solid fa-pen-to-square"></i> </button>
+                        <button *ngIf="token != null" class="btn btn-danger mt-3"
+                            (click)="openDeleteServiceDialog(ser)"><i class="fa-solid fa-trash"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <mat-paginator [length]="totalItems" [pageSize]="pageSize" [pageIndex]="currentPage - 1"
+            (page)="pageChanged($event)">
+        </mat-paginator>
+
+    </div>
+</div>
+<!-- Service End -->

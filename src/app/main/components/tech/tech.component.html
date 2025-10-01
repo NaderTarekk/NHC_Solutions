@@ -1,0 +1,24 @@
+<div class="container py-5">
+    <h1 class="section-title text-center">Technologies</h1>
+
+    <button *ngIf="token != null" mat-raised-button class="mb-3 btn btn-primary" (click)="openCreateTechDialog()">Create
+        New Technology <i class="fa-solid fa-circle-plus"></i></button>
+
+    <div class="row g-4 text-center">
+        <div class="col-lg-3 col-md-4 col-sm-6" *ngFor="let tech of Techs">
+            <div class="skill-box html">
+                <i class="{{tech.icon}}" [style.color]="tech.iconColor"></i>
+                <h6>{{tech.technologyName}}</h6>
+            </div>
+
+            <button *ngIf="token != null" class="btn btn-warning mt-3 mx-2" (click)="openUpdateTechDialog(tech)"><i
+                    class="fa-solid fa-pen-to-square"></i> </button>
+            <button *ngIf="token != null" class="btn btn-danger mt-3" (click)="openDeleteTechDialog(tech)"><i
+                    class="fa-solid fa-trash"></i></button>
+        </div>
+
+        <mat-paginator [length]="totalItems" [pageSize]="pageSize" [pageIndex]="currentPage - 1"
+            (page)="pageChanged($event)">
+        </mat-paginator>
+    </div>
+</div>

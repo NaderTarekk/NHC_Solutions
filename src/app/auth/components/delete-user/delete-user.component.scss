@@ -1,0 +1,11 @@
+/* Style for the "Ok" button */
+button[cdkFocusInitial] {
+  background-color: rgb(238, 41, 41);      /* Red background */
+  color: white;               /* White text */
+  border-radius: 4px;         /* Rounded corners */
+  padding: 8px 16px;          /* Padding around the button */
+}
+
+button[cdkFocusInitial]:hover {
+  background-color: darkred;  /* Darker red when hovered */
+}

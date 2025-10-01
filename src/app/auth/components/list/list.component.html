@@ -1,0 +1,43 @@
+<h6 class="display-5 text-center">Users Table</h6>
+
+<div class="container">
+    <button mat-raised-button class="mb-3" (click)="openDialog()">Create New User <i
+            class="fa-solid fa-circle-plus"></i></button>
+    <table>
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Email</th>
+                <th scope="col">Username</th>
+                <th scope="col">ِCreated Date</th>
+                <th scope="col">Last Login Date</th>
+                <th scope="col">Is Admin</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users; let i = index">
+                <td data-label="email">{{i+1}}</td>
+                <td data-label="email">{{user.email}}</td>
+                <td data-label="username">{{user.username}}</td>
+                <td data-label="username">{{user.createdDate | date: 'yyyy-MM-dd HH:mm'}}</td>
+                <td data-label="username">{{ user.lastLoginDate | date: 'yyyy-MM-dd HH:mm' }}</td>
+                <td data-label="active" *ngIf="user.isActive">
+                    <div class="alert alert-success" style="width: max-content; margin: 0 auto;"> Activated</div>
+                </td>
+                <td data-label="active" *ngIf="!user.isActive">
+                    <div class="alert alert-danger" style="width: max-content; margin: 0 auto;">Not Active</div>
+                </td>
+                <td data-label="actions">
+                    <button (click)="openUpdateUserDialog(user)" title="Update User" class="btn btn-warning"><i
+                            class="fa-solid fa-pen-to-square"></i></button>
+                    <button (click)="openResetPasswordDialog(user)" title="Reset Password"
+                        class="btn btn-primary mx-1"><i class="fa-solid fa-lock"></i></button>
+                    <button (click)="openDeleteDialog(user.userId)" title="Delete User" class="btn btn-danger">
+                        <i class="fa-solid fa-trash"></i>
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,35 @@
+<form [formGroup]="form">
+    <div mat-dialog-content>
+        <h1 mat-dialog-title>Create New Service</h1>
+        <p mat-dialog-title class="text-muted">Please Complete The Form</p>
+
+        <mat-form-field appearance="fill" class="w-100">
+            <mat-label>Technology Name</mat-label>
+            <input matInput formControlName="technologyName" placeholder="Please enter your technology name" required />
+        </mat-form-field>
+
+        <mat-form-field class="w-100" appearance="fill">
+            <mat-label>Icon</mat-label>
+            <input matInput formControlName="icon" placeholder="Please enter your icon" required />
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="w-100">
+            <mat-label>Icon Color</mat-label>
+            <input matInput formControlName="iconColor" placeholder="Please enter your icon color" required />
+        </mat-form-field>
+
+        <div *ngIf="form.invalid && form.touched" class="form-errors text-danger">
+            <div *ngIf="formControls['technologyName'].invalid && formControls['technologyName'].touched">Technology name is required.
+            </div>
+            <div *ngIf="formControls['iconColor'].invalid && formControls['iconColor'].touched">Icon color is
+                required.
+            </div>
+            <div *ngIf="formControls['icon'].invalid && formControls['icon'].touched">Icon is required.</div>
+        </div>
+    </div>
+
+    <div mat-dialog-actions>
+        <button mat-button (click)="onCancel()">Cancel</button>
+        <button mat-button (click)="onSubmit()" [disabled]="form.invalid">Create</button>
+    </div>
+</form>

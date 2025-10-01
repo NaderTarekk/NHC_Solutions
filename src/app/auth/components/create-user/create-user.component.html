@@ -1,0 +1,26 @@
+<form [formGroup]="form">
+    <div mat-dialog-content>
+        <h1 mat-dialog-title>Create New User</h1>
+        <p mat-dialog-title class="text-muted">Please Complete The Form</p>
+
+        <mat-form-field appearance="fill" class="w-100">
+            <mat-label>Username</mat-label>
+            <input matInput formControlName="username" placeholder="Please enter your username" required />
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="w-100">
+            <mat-label>Email</mat-label>
+            <input matInput formControlName="email" placeholder="Please enter your email" required />
+        </mat-form-field>
+
+        <mat-form-field class="w-100" appearance="fill">
+            <mat-label>Password</mat-label>
+            <input matInput formControlName="password" placeholder="Please enter your password" required />
+        </mat-form-field>
+    </div>
+
+    <div mat-dialog-actions>
+        <button mat-button (click)="onCancel()">Cancel</button>
+        <button mat-button (click)="onSubmit()">Create</button>
+    </div>
+</form>

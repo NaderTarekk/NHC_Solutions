@@ -1,0 +1,15 @@
+html,
+body {
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.btn-primary {
+  background: linear-gradient(to right, #0dcaf0, #20c997);
+  border: 0;
+  font-weight: bold;
+}

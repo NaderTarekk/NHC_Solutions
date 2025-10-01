@@ -1,0 +1,89 @@
+
+.skill-box {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 40px 20px;
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    transition: all 0.4s ease;
+    color: #fff;
+    cursor: pointer;
+}
+
+.skill-box i {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    display: block;
+    transition: transform 0.3s ease, color 0.3s ease;
+    width: 100%;
+}
+
+.skill-box h5 {
+    font-size: 1.2rem;
+    margin: 0;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.skill-box:hover {
+    transform: translateY(-12px) scale(1.05);
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+}
+
+.skill-box:hover i {
+    transform: rotate(10deg) scale(1.3);
+}
+
+.skill-box.html i {
+    color: #e34c26;
+}
+
+.skill-box.css i {
+    color: #264de4;
+}
+
+.skill-box.js i {
+    color: #f7df1e;
+}
+
+.skill-box.angular i {
+    color: #dd0031;
+}
+
+.section-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #000000;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 40px;
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+  padding-bottom: 10px;
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #0dcaf0, #20c997);
+  border-radius: 2px;
+  transition: width 0.4s ease;
+}
+
+.section-title:hover::after {
+  width: 150px;
+}
+
+
