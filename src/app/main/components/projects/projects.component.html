@@ -1,4 +1,4 @@
-<div class="container">
+<section class="container" id="projects">
     <mat-form-field appearance="fill">
         <mat-label>Filter Projects</mat-label>
         <input matInput [(ngModel)]="filterValue" (input)="filterProjects()"
@@ -21,4 +21,4 @@
     <mat-paginator [length]="totalItems" [pageSize]="pageSize" [pageIndex]="currentPage - 1"
         (page)="pageChanged($event)">
     </mat-paginator>
-</div>
+</section>
