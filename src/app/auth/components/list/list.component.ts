@@ -24,7 +24,7 @@ export class ListComponent implements OnInit {
   constructor(private service: AuthService, private toastr: ToastrService) { }
 
   ngOnInit(): void {
-    this.token = localStorage.getItem("token");
+    this.token = localStorage.getItem("NHCToken");
     this.GetAllUsers();
 
   }

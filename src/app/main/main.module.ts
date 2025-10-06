@@ -10,7 +10,7 @@ import { TechComponent } from './components/tech/tech.component';
 import { HeaderComponent } from './components/header/header.component';
 import { AboutComponent } from './components/about/about.component';
 import { CreateServiceComponent } from './components/dialogs/create-service/create-service.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormField, MatFormFieldModule, MatLabel } from '@angular/material/form-field';
 import { MatRadioModule } from '@angular/material/radio';
 import { ToastrModule } from 'ngx-toastr';
@@ -27,7 +27,16 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
 import { CreateTechComponent } from './components/dialogs/create-tech/create-tech.component';
 import { DeleteTechComponent } from './components/dialogs/delete-tech/delete-tech.component';
 import { UpdateTechComponent } from './components/dialogs/update-tech/update-tech.component';
-
+import { CreateTestimonialComponent } from './components/dialogs/create-testimonial/create-testimonial.component';
+import { UpdateTestimonialComponent } from './components/dialogs/update-testimonial/update-testimonial.component';
+import { DeleteTestimonialComponent } from './components/dialogs/delete-testimonial/delete-testimonial.component';
+import { CreateProjectComponent } from './components/dialogs/create-project/create-project.component';
+import { BlogsComponent } from './components/blogs/blogs.component';
+import {MatIconModule} from '@angular/material/icon';
+import { CreatePostComponent } from './components/dialogs/create-post/create-post.component';
+import { UpdatePostComponent } from './components/dialogs/update-post/update-post.component';
+import { DeletePostComponent } from './components/dialogs/delete-post/delete-post.component';
+import { AboutPostComponent } from './components/dialogs/about-post/about-post.component';
 @NgModule({
   declarations: [
     HomeComponent,
@@ -45,6 +54,15 @@ import { UpdateTechComponent } from './components/dialogs/update-tech/update-tec
     CreateTechComponent,
     DeleteTechComponent,
     UpdateTechComponent,
+    CreateTestimonialComponent,
+    UpdateTestimonialComponent,
+    DeleteTestimonialComponent,
+    CreateProjectComponent,
+    BlogsComponent,
+    CreatePostComponent,
+    UpdatePostComponent,
+    DeletePostComponent,
+    AboutPostComponent,
   ],
   imports: [
     CommonModule,
@@ -64,7 +82,9 @@ import { UpdateTechComponent } from './components/dialogs/update-tech/update-tec
     MatPaginatorModule,
     MatSortModule,
     DragDropModule,
-    ScrollingModule
+    ScrollingModule,
+    FormsModule,
+    MatIconModule
   ]
 })
 export class MainModule { }

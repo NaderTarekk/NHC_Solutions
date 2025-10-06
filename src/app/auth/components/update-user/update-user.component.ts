@@ -28,7 +28,7 @@ export class UpdateUserComponent {
   }
 
   onSubmit(): void {
-    const token = localStorage.getItem("token");
+    const token = localStorage.getItem("NHCToken");
     this.service.UpdateUser(this.data.user.userId, this.form.value, token).subscribe(res => {
       this.toastr.success("Updated Successfully", "Update User")
       this.dialogRef.close({ success: true });

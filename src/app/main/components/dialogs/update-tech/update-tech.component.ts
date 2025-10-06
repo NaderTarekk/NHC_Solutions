@@ -28,7 +28,7 @@ export class UpdateTechComponent {
   }
 
   onSubmit(): void {
-    const token = localStorage.getItem("token");
+    const token = localStorage.getItem("NHCToken");
 
     this.service.UpdateTech(this.data.tech.technologyId, this.form.value, token).subscribe(res => {
       this.toastr.success("Updated Successfully", "Update Technology")

@@ -1,0 +1,25 @@
+<h2 mat-dialog-title class="post-title">Post Details</h2>
+
+<mat-dialog-content class="post-content">
+    <div class="post-detail">
+        <p class="post-meta"><strong>{{ data.post.postType }}</strong></p>
+        <h3 class="post-heading">{{ data.post.title }}</h3>
+        <p class="post-description">{{ data.post.content }}</p>
+
+        <div *ngIf="data.post.imageUrl" class="post-image-container">
+            <img [src]="data.post.imageUrl" alt="Post Image" class="post-image" />
+        </div>
+
+        <div *ngIf="data.post.videoUrl" class="post-video-container">
+            <iframe [src]="sanitizeUrl(data.post.videoUrl)" title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+            </iframe>
+        </div>
+
+    </div>
+</mat-dialog-content>
+
+<mat-dialog-actions class="dialog-actions">
+    <button mat-button (click)="onClose()" class="close-button">Close</button>
+</mat-dialog-actions>

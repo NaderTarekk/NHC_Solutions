@@ -1,0 +1,51 @@
+<form [formGroup]="form">
+    <div mat-dialog-content>
+        <h1 mat-dialog-title>Create New Service</h1>
+        <p mat-dialog-title class="text-muted">Please Complete The Form</p>
+
+        <mat-form-field appearance="fill" class="w-100">
+            <mat-label>Title</mat-label>
+            <input matInput formControlName="title" placeholder="Please enter the title" required />
+        </mat-form-field>
+
+        <mat-form-field class="w-100" appearance="fill">
+            <mat-label>Content</mat-label>
+            <textarea matInput formControlName="content" placeholder="Please enter your content" required rows="5"></textarea>
+        </mat-form-field>
+
+        <mat-form-field class="w-100" appearance="fill">
+            <mat-label>Video Url</mat-label>
+            <input matInput formControlName="videoUrl" placeholder="Please enter the Video Url" />
+        </mat-form-field>
+
+        <div *ngIf="form.invalid && form.touched" class="form-errors text-danger">
+            <div *ngIf="formControls['title'].invalid && formControls['title'].touched">Title is required.
+            </div>
+            <div *ngIf="formControls['content'].invalid && formControls['content'].touched">Content is
+                required.
+            </div>
+        </div>
+
+        <label class="form-label">Post Type</label>
+        <select class="form-select" formControlName="postType">
+            <option *ngFor="let opt of POST_TYPE_OPTIONS" [ngValue]="opt.value">
+                {{ opt.label }}
+            </option>
+        </select>
+
+        <div class="form-group">
+            <label for="imageUrl">Image</label><br />
+            <input id="imageUrl" type="file" (change)="onFileSelected($event)" class="custom-file form-control" />
+        </div>
+
+        <div *ngIf="imageError" class="alert alert-danger" role="alert">
+            Only JPG, JPEG, PNG, or WebP files are allowed. <br>
+            Image size must not exceed less than 2MB.
+        </div>
+    </div>
+
+    <div mat-dialog-actions>
+        <button mat-button (click)="onCancel()">Cancel</button>
+        <button mat-button (click)="onSubmit()" [disabled]="form.invalid || isValidImage">Create</button>
+    </div>
+</form>

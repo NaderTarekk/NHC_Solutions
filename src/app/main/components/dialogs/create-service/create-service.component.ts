@@ -31,7 +31,7 @@ export class CreateServiceComponent {
   }
 
   onSubmit(): void {
-    const token: any = localStorage.getItem("token");
+    const token: any = localStorage.getItem("NHCToken");
     const decoded: any = jwtDecode(token);
     this.form.patchValue({
       createdBy: decoded.Id

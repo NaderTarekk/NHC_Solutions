@@ -1,0 +1,110 @@
+<section class="nc-blogs" id="Blogs">
+
+    <div class="d-flex justify-content-center align-items-center" style="gap: 30px;">
+        <div class="nc-blogs__head">
+            <h1 class="section-title text-center">Latest Posts</h1>
+            <p class="nc-blogs__subtitle">posts, articles, and stories for NHC Solutions.</p>
+        </div>
+        <!-- <div *ngIf="token != null" class="d-flex justify-content-center mb-4 align-items-center" style="gap: 20px;">
+            <p class="text-primary">Show Published</p>
+            <label class="switch">
+                <input type="checkbox" [checked]="showApproval" (change)="ShowPublishedPosts($event)" class="chk">
+                <span class="slider"></span>
+            </label>
+            <p class="text-primary"> Posts</p>
+        </div> -->
+    </div>
+
+    <button mat-raised-button class="mb-3 btn btn-primary" (click)="openCreatePostDialog()">Create
+        New Post <i class="fa-solid fa-circle-plus"></i></button>
+
+    <div class="filters">
+        <div>
+            <mat-form-field class="example-form-field">
+                <mat-label>Search posts...</mat-label>
+                <input matInput type="text" [(ngModel)]="query" (input)="filterPosts()">
+            </mat-form-field>
+        </div>
+
+        <div class="dropdown">
+            <input hidden class="sr-only" name="state-dropdown" id="state-dropdown" type="checkbox" #dd />
+            <label aria-label="dropdown scrollbar" for="state-dropdown" class="trigger">
+                {{ activeTag || 'Type' }}
+            </label>
+
+            <ul class="list webkit-scrollbar" role="list" dir="auto">
+                <li class="listitem" role="listitem" *ngFor="let opt of tags" (click)="setTag(opt); dd.checked = false">
+                    <article class="article" [class.active]="activeTag === opt.label">
+                        {{ opt.label }}
+                    </article>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+
+    <div class="nc-blogs__grid">
+
+        <article class="nc-card" *ngFor="let post of filteredPosts; trackBy: trackById" [attr.aria-label]="post.title">
+            <div *ngIf="token != null || post.isPublished">
+
+                <div class="nc-card__media">
+                    <img [src]="post.imageUrl" *ngIf="post.imageUrl" [alt]="post.title" loading="lazy">
+
+                    <iframe [src]="sanitizeUrl(post.videoUrl)" title="YouTube video player" frameborder="0"
+                        *ngIf="post.videoUrl"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                    </iframe>
+
+                </div>
+
+                <div class="nc-card__body">
+                    <h3 class="nc-card__title">
+                        <a class="link-underline" [href]="'/blog/' + post.slug">{{ post.title }}</a>
+                    </h3>
+
+                    <p class="nc-card__excerpt">{{ post.content }}</p>
+
+                    <div class="nc-card__meta">
+                        <div class="meta__left">
+                            <span class="pill text-light">{{ post.postType }}</span>
+
+                            <span class="dot"></span>
+                            <time class="meta__date">{{ post.createdAt | date:'mediumDate' }}</time>
+                        </div>
+                        <a class="btn-read" (click)="openAboutPostDialog(post)">
+                            Read More
+                            <svg viewBox="0 0 24 24" class="icon" aria-hidden="true">
+                                <path d="M13 5l7 7-7 7M5 12h14" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-center align-items-center mb-3">
+                <button *ngIf="token != null" class="btn btn-warning mx-2" (click)="openUpdatePostDialog(post)"><i
+                        class="fa-solid fa-pen-to-square"></i> </button>
+                <button *ngIf="token != null" class="btn btn-danger" (click)="openDeletePostDialog(post)"><i
+                        class="fa-solid fa-trash"></i></button>
+
+                <br>
+
+            </div>
+            <div class="d-flex justify-content-center align-items-center mb-3" style="gap: 20px;">
+                <p class="text-primary" *ngIf="post.isPublished && token != null">Is Published</p>
+                <label *ngIf="token != null" class="switch">
+                    <input type="checkbox" [checked]="post.isPublished" (change)="onTogglePublish(post, $event)"
+                        class="chk">
+                    <span class="slider"></span>
+                </label>
+            </div>
+        </article>
+    </div>
+    <mat-paginator [length]="totalItems" [pageSize]="pageSize" [pageIndex]="pageNumber - 1"
+        (page)="pageChanged($event)">
+    </mat-paginator>
+</section>

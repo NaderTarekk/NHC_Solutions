@@ -27,7 +27,7 @@ export class TechComponent {
   ngOnInit(): void {
     this.GetAllTechs()
 
-    this.token = localStorage.getItem("token");
+    this.token = localStorage.getItem("NHCToken");
   }
 
   openCreateTechDialog(): void {

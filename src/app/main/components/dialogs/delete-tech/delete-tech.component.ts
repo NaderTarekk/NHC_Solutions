@@ -13,7 +13,7 @@ export class DeleteTechComponent {
  constructor(public dialogRef: MatDialogRef<DeleteTechComponent>, @Inject(MAT_DIALOG_DATA) public data: any, private service: MainService, private toastr: ToastrService) { }
 
   DeleteTech() {
-    const token = localStorage.getItem("token");
+    const token = localStorage.getItem("NHCToken");
 
     this.service.DeleteTech(this.data.tech.technologyId, token).subscribe((res: any) => {
       this.dialogRef.close({ success: true });

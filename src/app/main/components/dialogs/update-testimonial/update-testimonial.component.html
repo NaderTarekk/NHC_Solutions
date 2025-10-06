@@ -1,0 +1,30 @@
+<form [formGroup]="form">
+    <div mat-dialog-content>
+        <h1 mat-dialog-title>Update New Technology</h1>
+        <p mat-dialog-title class="text-muted">Please Complete The Form</p>
+
+        <mat-form-field appearance="fill" class="w-100">
+            <mat-label>Client Name</mat-label>
+            <input matInput formControlName="clientName" placeholder="Please enter client name" required />
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="w-100">
+            <mat-label>Comment</mat-label>
+            <input matInput formControlName="comment" placeholder="Please enter the comment" required />
+        </mat-form-field>
+
+        <label id="example-radio-group-label">Pick Activity</label>
+        <div class="custom-checkbox-container">
+            <input class="custom-checkbox-input" id="modernCheckbox" type="checkbox" formControlName="isApproved" />
+            <label class="custom-checkbox-label" for="modernCheckbox">
+                <span class="custom-checkbox-text">Is Approved</span>
+            </label>
+        </div>
+
+    </div>
+
+    <div mat-dialog-actions>
+        <button mat-button (click)="onCancel()">Cancel</button>
+        <button mat-button (click)="onSubmit()">Update</button>
+    </div>
+</form>

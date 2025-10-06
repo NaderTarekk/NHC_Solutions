@@ -14,7 +14,7 @@ export class DeleteUserComponent {
   constructor(public dialogRef: MatDialogRef<DeleteUserComponent>, @Inject(MAT_DIALOG_DATA) public data: any, private service: AuthService, private toastr: ToastrService) { }
 
   DeleteUser() {
-    const token = localStorage.getItem("token");
+    const token = localStorage.getItem("NHCToken");
     this.service.DeleteUser(this.data.id, token).subscribe((res: any) => {
       this.dialogRef.close({ success: true });
       this.toastr.success(res.message, "Delete User");

@@ -29,7 +29,7 @@ export class CreateTechComponent {
   }
 
   onSubmit(): void {
-    const token: any = localStorage.getItem("token");
+    const token: any = localStorage.getItem("NHCToken");
 
     this.service.CreateTech(this.form.value, token).subscribe(res => {
       this.toastr.success("Created Successfully", "Create New Technology")

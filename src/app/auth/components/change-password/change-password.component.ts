@@ -29,7 +29,7 @@ export class ChangePasswordComponent {
   }
 
   onSubmit(): void {
-    const token = localStorage.getItem("token");
+    const token = localStorage.getItem("NHCToken");
     this.service.ResetPassword(this.data.user.userId, { email: this.form.get("email")?.value, newPassword: this.form.get("password")?.value }, token).subscribe(res => {
       this.toastr.success("Created Successfully", "Create New User")
     }, err => {

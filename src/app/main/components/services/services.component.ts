@@ -27,7 +27,7 @@ export class ServicesComponent implements OnInit {
   ngOnInit(): void {
     this.GetAllServices()
 
-    this.token = localStorage.getItem("token");
+    this.token = localStorage.getItem("NHCToken");
   }
 
   openServiceDialog(): void {

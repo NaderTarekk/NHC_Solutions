@@ -10,51 +10,50 @@
         </div>
         <div class="row g-5">
             <div class="col-lg-5 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                <p class="mb-2">My office:</p>
-                <h3 class="fw-bold">123 Street, New York, USA</h3>
+                <p class="mb-2">Our offices:</p>
+                <h3 class="fw-bold">Riyadh, Saudi Arabia</h3>
+                <h3 class="fw-bold">Cairo, Egypt</h3>
                 <hr class="w-100">
-                <p class="mb-2">Call me:</p>
-                <h3 class="fw-bold">+012 345 6789</h3>
+                <p class="mb-2">Call us:</p>
+                <h3 class="fw-bold">+966 501347581</h3>
+                <h3 class="fw-bold">+20 1116770933</h3>
                 <hr class="w-100">
-                <p class="mb-2">Mail me:</p>
-                <h3 class="fw-bold">infoexample.com</h3>
-                <hr class="w-100">
-                <p class="mb-2">Follow me:</p>
+                <p class="mb-2">Mail us:</p>
+                <h3 class="fw-bold">{{email}}</h3>
+                <!-- <hr class="w-100">
+                <p class="mb-2">Follow us:</p>
                 <div class="d-flex pt-2">
                     <a class="btn btn-square btn-primary me-2" href=""><i class="fab fa-twitter"></i></a>
                     <a class="btn btn-square btn-primary me-2" href=""><i class="fab fa-facebook-f"></i></a>
                     <a class="btn btn-square btn-primary me-2" href=""><i class="fab fa-youtube"></i></a>
                     <a class="btn btn-square btn-primary me-2" href=""><i class="fab fa-linkedin-in"></i></a>
-                </div>
+                </div> -->
             </div>
             <div class="col-lg-7 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                <p class="mb-4">The contact form is currently inactive. Get a functional and working contact form with
-                    Ajax
-                    & PHP in a few minutes. Just copy and paste the files, add a little code and you're done. <a
-                        href="https://htmlcodex.com/contact-form">Download Now</a>.</p>
-                <form>
+                <p class="mb-4">Please complete the form to contact us</p>
+                <form [formGroup]="form" (submit)="onSubmit()">
                     <div class="row g-3">
                         <div class="col-md-6">
                             <div class="form-floating">
-                                <input type="text" class="form-control" id="name" placeholder="Your Name">
-                                <label for="name">Your Name</label>
+                                <input type="text" class="form-control" id="name" formControlName="name" placeholder="Please Enter Your Name">
+                                <label for="name">Please Enter Your Name</label>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-floating">
-                                <input type="email" class="form-control" id="email" placeholder="Your Email">
-                                <label for="email">Your Email</label>
+                                <input type="email" class="form-control" id="email" formControlName="email" placeholder="Please Enter Your Email">
+                                <label for="email">Please Enter Your Email</label>
                             </div>
                         </div>
                         <div class="col-12">
                             <div class="form-floating">
-                                <input type="text" class="form-control" id="subject" placeholder="Subject">
+                                <input type="text" class="form-control" id="subject" formControlName="subject" placeholder="Subject">
                                 <label for="subject">Subject</label>
                             </div>
                         </div>
                         <div class="col-12">
                             <div class="form-floating">
-                                <textarea class="form-control" placeholder="Leave a message here" id="message"
+                                <textarea class="form-control" placeholder="Leave a message here" formControlName="message" id="message"
                                     style="height: 100px"></textarea>
                                 <label for="message">Message</label>
                             </div>
@@ -68,3 +67,4 @@
         </div>
     </div>
 </div>
+

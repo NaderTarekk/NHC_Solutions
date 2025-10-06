@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
     this.loader = true;
     this.service.Login(this.form.value).subscribe((res: any) => {
       this.toastr.success("Sign in successfully", "Sign In");
-      localStorage.setItem("token", res.token);
+      localStorage.setItem("NHCToken", res.token);
       this.router.navigate([""]);
 
     }, error => {
