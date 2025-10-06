@@ -75,6 +75,8 @@ export class BlogsComponent implements OnInit {
   activeTag = '';
   filteredPosts: any[] = []
   allPosts: any[] = []
+  visiblePostsCount: number = 4;
+  totalPostsCount: number = 0;
 
   constructor(private el: ElementRef, private service: MainService, private sanitizer: DomSanitizer, private toastr: ToastrService) { }
 
@@ -86,6 +88,11 @@ export class BlogsComponent implements OnInit {
     this.service.PostsList(this.pageNumber, 99999999).subscribe((res: any) => {
       this.allPosts = res.items
     });
+  }
+
+
+  loadMorePosts() {
+    this.visiblePostsCount += 4;
   }
 
   sanitizeUrl(url: string) {
@@ -144,7 +151,7 @@ export class BlogsComponent implements OnInit {
       this.filteredPosts = res.items
       this.totalItems = res.totalCount;
       console.log(res);
-      
+
     })
   }
 
@@ -203,7 +210,7 @@ export class BlogsComponent implements OnInit {
     test.isPublished = newValue;
     this.token = localStorage.getItem("NHCToken");
 
-     const formData = new FormData();
+    const formData = new FormData();
 
     formData.append('isPublished', newValue);
 
