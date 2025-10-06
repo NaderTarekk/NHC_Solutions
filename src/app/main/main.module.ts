@@ -43,6 +43,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatTableModule } from '@angular/material/table';
+import { OurClientsComponent } from './components/our-clients/our-clients.component';
 @NgModule({
   declarations: [
     HomeComponent,
@@ -69,6 +70,7 @@ import { MatTableModule } from '@angular/material/table';
     UpdatePostComponent,
     DeletePostComponent,
     AboutPostComponent,
+    OurClientsComponent,
   ],
   imports: [
     CommonModule,
