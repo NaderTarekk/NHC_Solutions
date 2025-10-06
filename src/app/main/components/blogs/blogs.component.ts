@@ -87,9 +87,14 @@ export class BlogsComponent implements OnInit {
 
     this.service.PostsList(this.pageNumber, 99999999).subscribe((res: any) => {
       this.allPosts = res.items
+      console.log(res.items);
+
     });
   }
 
+  getSanitizedUrl(url: string) {
+    return this.sanitizer.bypassSecurityTrustResourceUrl(url);
+  }
 
   loadMorePosts() {
     this.visiblePostsCount += 4;
