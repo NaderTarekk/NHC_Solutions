@@ -32,11 +32,17 @@ import { UpdateTestimonialComponent } from './components/dialogs/update-testimon
 import { DeleteTestimonialComponent } from './components/dialogs/delete-testimonial/delete-testimonial.component';
 import { CreateProjectComponent } from './components/dialogs/create-project/create-project.component';
 import { BlogsComponent } from './components/blogs/blogs.component';
-import {MatIconModule} from '@angular/material/icon';
+import { MatIconModule } from '@angular/material/icon';
 import { CreatePostComponent } from './components/dialogs/create-post/create-post.component';
 import { UpdatePostComponent } from './components/dialogs/update-post/update-post.component';
 import { DeletePostComponent } from './components/dialogs/delete-post/delete-post.component';
 import { AboutPostComponent } from './components/dialogs/about-post/about-post.component';
+import { MatCardModule } from '@angular/material/card';
+import { MatSelectModule } from '@angular/material/select';
+import { MatListModule } from '@angular/material/list';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatTableDataSource } from '@angular/material/table';
+import { MatTableModule } from '@angular/material/table';
 @NgModule({
   declarations: [
     HomeComponent,
@@ -84,7 +90,14 @@ import { AboutPostComponent } from './components/dialogs/about-post/about-post.c
     DragDropModule,
     ScrollingModule,
     FormsModule,
-    MatIconModule
+    MatIconModule,
+    MatSelectModule,
+    MatPaginatorModule,    // Importing MatPaginatorModule
+    MatSelectModule,       // Importing MatSelectModule
+    MatInputModule,        // Importing MatInputModule
+    MatSortModule,         // Importing MatSortModule
+    MatCardModule,
+    MatTableModule
   ]
 })
 export class MainModule { }
