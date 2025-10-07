@@ -1,6 +1,6 @@
 <section class="testimonials" id="testimonials">
-    <h1 class="section-title2 text-center">What clients say</h1>
-    <div class="d-flex justify-content-center align-items-center" style="gap: 30px;">
+    <h1 class="section-title2 text-center wow fadeInUp">What clients say</h1>
+    <div class="d-flex justify-content-center align-items-center wow fadeInUp" style="gap: 30px;">
         <button mat-raised-button class="mb-3 btn btn-primary" (click)="openCreateTestimonialDialog()">Create
             New Testimonial <i class="fa-solid fa-circle-plus"></i></button>
 
@@ -14,7 +14,7 @@
         </div>
     </div>
 
-    <div class="testimonial-wrapper">
+    <div class="testimonial-wrapper wow fadeInUp d-flex justify-content-center">
         <ng-container *ngFor="let test of testimonials; trackBy: trackById">
             <div class="testimonial-card" *ngIf="token != null || test.isApproved">
                 <p><span class="text-muted" *ngIf="token != null"> {{test.createdAt | date}}</span></p>

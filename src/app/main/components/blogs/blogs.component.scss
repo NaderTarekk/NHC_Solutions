@@ -1,7 +1,7 @@
 // Colors
 $c1: #0dcaf0; // primary
 $c2: #20c997; // accent
-$bg: #0b0f12;
+$bg: #ffffff;
 $card-bg: #ffffff;
 $text: #000000;
 $muted: #9fb2bd;
@@ -433,6 +433,10 @@ $g2: linear-gradient(135deg, $c1, $c2);
     display: flex;
     align-items: center;
     justify-content: space-around;
+
+    @media (max-width: 640px) {
+        display: block;
+    }
 }
 
 .bg-dark .example-form-field,
@@ -711,7 +715,7 @@ img {
     object-fit: cover;
 }
 
-.card_preview-text{
+.card_preview-text {
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;

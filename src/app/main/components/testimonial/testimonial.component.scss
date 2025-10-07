@@ -36,7 +36,6 @@
 
     .testimonial-card {
         flex: 0 0 300px;
-        background: #12161c;
         padding: 25px;
         border-radius: 12px;
         box-shadow: 0 6px 12px rgba(0, 0, 0, 0.35);
@@ -62,6 +61,7 @@
                 border: 3px solid #0dcaf0;
                 margin-bottom: 10px;
                 font-size: 24px;
+                color: #000000;
             }
 
             .client-name {
@@ -78,7 +78,7 @@
         .client-comment {
             font-size: 0.95rem;
             line-height: 1.5;
-            color: #d4dbe3;
+            color: #525252;
             font-style: italic;
             text-align: center;
         }

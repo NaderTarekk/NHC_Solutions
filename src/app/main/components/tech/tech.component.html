@@ -1,11 +1,11 @@
 <div class="container py-5" id="skills">
-    <h1 class="section-title text-center">Technologies</h1>
+    <h1 class="section-title text-center  wow fadeInUp">Technologies</h1>
 
     <button *ngIf="token != null" mat-raised-button class="mb-3 btn btn-primary" (click)="openCreateTechDialog()">Create
         New Technology <i class="fa-solid fa-circle-plus"></i></button>
 
     <div class="row g-4 text-center">
-        <div class="col-lg-3 col-md-4 col-sm-6" *ngFor="let tech of Techs">
+        <div class="col-lg-3 col-md-4 col-sm-6  wow fadeInUp" *ngFor="let tech of Techs">
             <div class="skill-box html">
                 <i class="{{tech.icon}}" [style.color]="tech.iconColor"></i>
                 <h6>{{tech.technologyName}}</h6>
@@ -17,7 +17,7 @@
                     class="fa-solid fa-trash"></i></button>
         </div>
 
-        <mat-paginator [length]="totalItems" [pageSize]="pageSize" [pageIndex]="currentPage - 1"
+        <mat-paginator class="wow fadeInUp" [length]="totalItems" [pageSize]="pageSize" [pageIndex]="currentPage - 1"
             (page)="pageChanged($event)">
         </mat-paginator>
     </div>

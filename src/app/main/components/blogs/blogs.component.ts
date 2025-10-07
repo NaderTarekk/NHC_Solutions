@@ -87,8 +87,6 @@ export class BlogsComponent implements OnInit {
 
     this.service.PostsList(this.pageNumber, 99999999).subscribe((res: any) => {
       this.allPosts = res.items
-      console.log(res.items);
-
     });
   }
 
@@ -115,7 +113,6 @@ export class BlogsComponent implements OnInit {
       post.postType.toLowerCase().includes(this.query.toLowerCase())
     );
     this.totalItems = this.filteredPosts.length;
-    // this.applyPagination();
   }
 
   applyPagination() {
@@ -152,10 +149,17 @@ export class BlogsComponent implements OnInit {
   trackByTag = (_: number, t: string) => t;
 
   GetAllPosts() {
-    this.service.PostsList(this.pageNumber, this.pageSize).subscribe((res: any) => {
-      this.filteredPosts = res.items
-      this.totalItems = res.totalCount;
-      console.log(res);
+    this.service.PostsList(this.pageNumber, 999999).subscribe((res: any) => {
+      console.log(res.items);
+      
+      if (this.token) {
+        this.filteredPosts = res.items;
+      } else {
+        this.filteredPosts = res.items.filter((post: any) => post.isPublished === true);
+      }
+
+      this.totalItems = this.filteredPosts.length;
+      console.log(this.filteredPosts);
 
     })
   }
@@ -222,7 +226,6 @@ export class BlogsComponent implements OnInit {
     this.service.UpdatePost(test.postId, formData, this.token).subscribe((res: any) => {
       if (newValue == true) {
         this.toastr.success("Post is Published", "Publishing Post")
-        console.log("res:" + res);
       }
       else
         this.toastr.success("Post is not Published", "Publishing Post")

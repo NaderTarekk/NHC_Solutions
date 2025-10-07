@@ -1,11 +1,13 @@
 <section class="container" id="projects">
-    <mat-form-field appearance="fill">
-        <mat-label>Filter Projects</mat-label>
+    <h1 class="section-title text-center wow fadeInUp">Our Works</h1>
+
+    <mat-form-field appearance="fill" class="wow fadeInUp">
+        <mat-label>Filter Projects...</mat-label>
         <input matInput [(ngModel)]="filterValue" (input)="filterProjects()"
             placeholder="Search by name, category, or description">
     </mat-form-field>
 
-    <div class="project-container">
+    <div class="project-container wow fadeInUp">
         <div *ngFor="let project of filteredProjects" class="project-card">
             <img [src]="project.imageUrl" alt="{{ project.name }}">
             <div class="project-content">
@@ -17,8 +19,8 @@
         </div>
 
     </div>
-    
-    <mat-paginator [length]="totalItems" [pageSize]="pageSize" [pageIndex]="currentPage - 1"
+
+    <mat-paginator class="wow fadeInUp" [length]="totalItems" [pageSize]="pageSize" [pageIndex]="currentPage - 1"
         (page)="pageChanged($event)">
     </mat-paginator>
 </section>

@@ -1,6 +1,6 @@
 <section class="nc-blogs" id="Blogs">
 
-    <div class="d-flex justify-content-center align-items-center" style="gap: 30px;">
+    <div class="d-flex justify-content-center align-items-center wow fadeInUp" style="gap: 30px;">
         <div class="nc-blogs__head">
             <h1 class="section-title text-center">Latest Posts</h1>
             <p class="nc-blogs__subtitle">posts, articles, and stories for NHC Solutions.</p>
@@ -18,15 +18,15 @@
     <button mat-raised-button class="mb-3 btn btn-primary" *ngIf="token" (click)="openCreatePostDialog()">Create
         New Post <i class="fa-solid fa-circle-plus"></i></button>
 
-    <div class="filters">
+    <div class="filters container wow fadeInUp">
         <div>
-            <mat-form-field class="example-form-field">
+            <mat-form-field class="example-form-field w-100">
                 <mat-label>Search posts...</mat-label>
                 <input matInput type="text" [(ngModel)]="query" (input)="filterPosts()">
             </mat-form-field>
         </div>
 
-        <div class="dropdown">
+        <div class="dropdown w-100">
             <input hidden class="sr-only" name="state-dropdown" id="state-dropdown" type="checkbox" #dd />
             <label aria-label="dropdown scrollbar" for="state-dropdown" class="trigger">
                 {{ activeTag || 'Type' }}
@@ -44,7 +44,7 @@
     </div>
 
 
-    <div class="nc-blogs__grid">
+    <div class="nc-blogs__grid wow fadeInUp">
 
         <article class="nc-card" *ngFor="let post of filteredPosts; trackBy: trackById" [attr.aria-label]="post.title">
             <div *ngIf="token != null || post.isPublished">
@@ -57,7 +57,6 @@
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
                     </iframe>
-
                 </div>
 
                 <div class="nc-card__body">
@@ -90,10 +89,9 @@
                         class="fa-solid fa-pen-to-square"></i> </button>
                 <button *ngIf="token != null" class="btn btn-danger" (click)="openDeletePostDialog(post)"><i
                         class="fa-solid fa-trash"></i></button>
-
                 <br>
-
             </div>
+
             <div class="d-flex justify-content-center align-items-center mb-3" style="gap: 20px;">
                 <p class="text-primary" *ngIf="post.isPublished && token != null">Is Published</p>
                 <label *ngIf="token != null" class="switch">
@@ -103,8 +101,9 @@
                 </label>
             </div>
         </article>
+
     </div>
-    <mat-paginator [length]="totalItems" [pageSize]="pageSize" [pageIndex]="pageNumber - 1"
+    <!-- <mat-paginator [length]="totalItems" [pageSize]="pageSize" [pageIndex]="pageNumber - 1"
         (page)="pageChanged($event)">
-    </mat-paginator>
+    </mat-paginator> -->
 </section>
