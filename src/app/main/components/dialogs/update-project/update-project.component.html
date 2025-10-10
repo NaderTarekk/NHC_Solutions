@@ -1,28 +1,24 @@
 <form [formGroup]="form">
     <div mat-dialog-content>
-        <h1 mat-dialog-title>Create New Project</h1>
+        <h1 mat-dialog-title>Update Project</h1>
         <p mat-dialog-title class="text-muted">Please Complete The Form</p>
 
-        <!-- Project Title Field -->
         <mat-form-field appearance="fill" class="w-100">
             <mat-label>Project Title</mat-label>
             <input matInput formControlName="projectTitle" placeholder="Please enter the project title" required />
         </mat-form-field>
 
-        <!-- Project Description Field -->
         <mat-form-field appearance="fill" class="w-100">
             <mat-label>Description</mat-label>
             <textarea matInput formControlName="description" placeholder="Please enter your description" required
                 rows="5"></textarea>
         </mat-form-field>
 
-        <!-- Demo Video URL Field -->
         <mat-form-field appearance="fill" class="w-100">
             <mat-label>Demo Video Url</mat-label>
             <input matInput formControlName="demoVidUrl" placeholder="Please enter the demo video url" />
         </mat-form-field>
 
-        <!-- Form Error Messages -->
         <div *ngIf="form.invalid && form.touched" class="form-errors text-danger">
             <div *ngIf="formControls['projectTitle'].invalid && formControls['projectTitle'].touched">
                 Project title is required.
@@ -32,49 +28,41 @@
             </div>
         </div>
 
-        <input id="imageUrl" type="file" (change)="onFileSelected($event)" multiple class="custom-file form-control" />
-
+        <!-- <input id="imageUrl" type="file" (change)="onFileSelected($event)" multiple class="custom-file form-control" /> -->
         <table class="table">
             <thead>
                 <tr>
                     <th>Image</th>
                     <th>Set as Main Image</th>
-                    <th>Action</th> <!-- Add a column for the remove button -->
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody formArrayName="projectImages">
                 <tr *ngFor="let image of projectImages.controls; let i = index" [formGroupName]="i">
                     <td>
-                        <img [src]="getImagePreview(image.value.imageFile)" alt="Image Preview"
-                            style="width: 100px; height: auto;" />
-                        <p>{{ image.value.imageFile.name }}</p>
+                        <img [src]="image.value.imageUrl" alt="Image Preview" style="width: 100px; height: auto;" />
                     </td>
                     <td>
-                        <!-- Checkbox to set an image as the main image -->
                         <mat-checkbox formControlName="isMainImage" (change)="onMainImageChange($event, i)">
-                            Set "{{ image.value.imageFile.name }}" as Main Image
+                            Set as Main Image
                         </mat-checkbox>
                     </td>
                     <td>
-                        <!-- Remove button for each image -->
                         <button type="button" (click)="removeImage(i)" class="btn btn-danger">Remove</button>
                     </td>
                 </tr>
             </tbody>
         </table>
 
-        <!-- Image Error Message -->
+
+
         <div *ngIf="imageError" class="alert alert-danger" role="alert">
             {{ imageError }}
         </div>
     </div>
 
-    <!-- Dialog Actions -->
     <div mat-dialog-actions>
         <button mat-button (click)="onCancel()">Cancel</button>
-        <button mat-button (click)="onSubmit()" [disabled]="form.invalid || imageError">Create</button>
+        <button mat-button (click)="onSubmit()" [disabled]="form.invalid || imageError">Update</button>
     </div>
 </form>
-
-
-<!-- Project Images Section -->

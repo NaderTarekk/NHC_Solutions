@@ -1,23 +1,35 @@
 <section class="container" id="projects">
     <h1 class="section-title text-center wow fadeInUp">Our Works</h1>
 
-    <mat-form-field appearance="fill" class="wow fadeInUp">
+    <button mat-raised-button class="mb-3 btn btn-primary" *ngIf="token" (click)="openCreateProjectDialog()">Create
+        New Prject <i class="fa-solid fa-circle-plus"></i></button>
+
+    <br>
+
+    <mat-form-field appearance="fill" class="wow fadeInUp w-50">
         <mat-label>Filter Projects...</mat-label>
         <input matInput [(ngModel)]="filterValue" (input)="filterProjects()"
             placeholder="Search by name, category, or description">
     </mat-form-field>
 
-    <div class="project-container wow fadeInUp">
-        <div *ngFor="let project of filteredProjects" class="project-card">
-            <img [src]="project.imageUrl" alt="{{ project.name }}">
-            <div class="project-content">
-                <h3>{{ project.name }}</h3>
-                <p class="category">{{ project.category }}</p>
-                <p class="description">{{ project.description }}</p>
-                <a href="#" class="project-link">View Details</a>
-            </div>
-        </div>
+    <div class="card_container wow fadeInUp">
+        <article class="card_article" *ngFor="let project of projectList">
+            <img src="{{ getMainImageUrl(project.projectImages) }}" alt="{{project.projectTitle}}" class="card_img">
 
+            <div class="card_data">
+                <span class="card_description card_preview-text">{{ project.description }}</span>
+                <h2 class="card_title">{{ project.projectTitle }}</h2>
+                <button class="card_button" (click)="openProjectDetailsDialog(project)"><i class="fa-regular fa-circle-right"></i> View Details</button>
+
+                <br>
+
+                <button *ngIf="token != null" class="btn btn-warning mt-3 mx-2"
+                    (click)="openUpdateProjectDialog(project)"><i class="fa-solid fa-pen-to-square"></i> </button>
+                <button *ngIf="token != null" class="btn btn-danger mt-3" (click)="openDeleteProjectDialog(project)"><i
+                        class="fa-solid fa-trash"></i></button>
+            </div>
+
+        </article>
     </div>
 
     <mat-paginator class="wow fadeInUp" [length]="totalItems" [pageSize]="pageSize" [pageIndex]="currentPage - 1"

@@ -1,0 +1,43 @@
+<form [formGroup]="form">
+    <div mat-dialog-content>
+        <h1 mat-dialog-title>Create New Service</h1>
+        <p mat-dialog-title class="text-muted">Please Complete The Form</p>
+
+        <mat-form-field appearance="fill" class="w-100">
+            <mat-label>First Name</mat-label>
+            <input matInput formControlName="firstName" placeholder="Please enter first name" required />
+        </mat-form-field>
+
+        <mat-form-field class="w-100" appearance="fill">
+            <mat-label>Last Name</mat-label>
+            <input matInput formControlName="lastName" placeholder="Please enter last name" required />
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="w-100">
+            <mat-label>Job Title</mat-label>
+            <input matInput formControlName="jobTitle" placeholder="Please enter job title" required />
+        </mat-form-field>
+
+        <div class="form-group">
+            <label for="imageUrl">Image</label><br />
+            <input id="imageUrl" type="file" (change)="onFileSelected($event)" class="custom-file form-control" />
+        </div>
+
+        <div *ngIf="form.invalid && form.touched" class="form-errors text-danger">
+            <div *ngIf="formControls['firstName'].invalid && formControls['firstName'].touched">First name
+                name is required.
+            </div>
+            <div *ngIf="formControls['lastName'].invalid && formControls['lastName'].touched">Last name is
+                required.
+            </div>
+            <div *ngIf="formControls['jobTitle'].invalid && formControls['jobTitle'].touched">Job Title is
+                required.
+            </div>
+        </div>
+    </div>
+
+    <div mat-dialog-actions>
+        <button mat-button (click)="onCancel()">Cancel</button>
+        <button mat-button (click)="onSubmit()" [disabled]="form.invalid">Create</button>
+    </div>
+</form>

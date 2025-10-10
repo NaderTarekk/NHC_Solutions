@@ -1,0 +1,27 @@
+<h1 mat-dialog-title class="dialog-title">Project Details</h1>
+<mat-dialog-content class="dialog-content">
+  <div class="project-details">
+    <div class="project-info">
+      <h2 class="project-title">{{ data.projectTitle }}</h2>
+      <p class="project-description">{{ data.description }}</p>
+      <a class="project-video" href="{{ data.demoVidUrl }}" target="_blank">
+        <button mat-raised-button color="primary" class="video-btn">
+          Watch Demo Video
+        </button>
+      </a>
+    </div>
+
+    <div class="project-images">
+      <h3>Project Images</h3>
+      <div class="image-gallery">
+        <div *ngFor="let image of data.projectImages" class="image-item">
+          <img [src]="image.imageUrl" alt="Image Preview" class="project-image" />
+        </div>
+      </div>
+    </div>
+  </div>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button mat-raised-button (click)="onClose()" class="bg-danger text-light">Close</button>
+</mat-dialog-actions>

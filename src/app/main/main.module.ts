@@ -39,11 +39,16 @@ import { DeletePostComponent } from './components/dialogs/delete-post/delete-pos
 import { AboutPostComponent } from './components/dialogs/about-post/about-post.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatSelectModule } from '@angular/material/select';
-import { MatListModule } from '@angular/material/list';
-import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import { MatTableDataSource } from '@angular/material/table';
 import { MatTableModule } from '@angular/material/table';
 import { OurClientsComponent } from './components/our-clients/our-clients.component';
+import { UpdateProjectComponent } from './components/dialogs/update-project/update-project.component';
+import { DeleteProjectComponent } from './components/dialogs/delete-project/delete-project.component';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import { ViewProjectDetailsComponent } from './components/dialogs/view-project-details/view-project-details.component';
+import { CreateTeamMemberComponent } from './components/dialogs/create-team-member/create-team-member.component';
+import { UpdateTeamMemberComponent } from './components/dialogs/update-team-member/update-team-member.component';
+import { DeleteTeamMemberComponent } from './components/dialogs/delete-team-member/delete-team-member.component';
+
 @NgModule({
   declarations: [
     HomeComponent,
@@ -71,6 +76,12 @@ import { OurClientsComponent } from './components/our-clients/our-clients.compon
     DeletePostComponent,
     AboutPostComponent,
     OurClientsComponent,
+    UpdateProjectComponent,
+    DeleteProjectComponent,
+    ViewProjectDetailsComponent,
+    CreateTeamMemberComponent,
+    UpdateTeamMemberComponent,
+    DeleteTeamMemberComponent,
   ],
   imports: [
     CommonModule,
@@ -94,12 +105,13 @@ import { OurClientsComponent } from './components/our-clients/our-clients.compon
     FormsModule,
     MatIconModule,
     MatSelectModule,
-    MatPaginatorModule,    // Importing MatPaginatorModule
-    MatSelectModule,       // Importing MatSelectModule
-    MatInputModule,        // Importing MatInputModule
-    MatSortModule,         // Importing MatSortModule
+    MatPaginatorModule,
+    MatSelectModule,
+    MatInputModule,
+    MatSortModule,
     MatCardModule,
-    MatTableModule
+    MatTableModule,
+    MatCheckboxModule
   ]
 })
 export class MainModule { }

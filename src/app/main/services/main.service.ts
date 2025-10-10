@@ -117,11 +117,6 @@ export class MainService {
     return this.http.delete(`${environment.mainAPI}/testimonial/${id}`, { headers });
   }
 
-  // contact
-  SendMessage(request: any) {
-    return this.http.post(`${environment.mainAPI}/contact`, request);
-  }
-
   MessagesList(pageNumber: number, pageSize: number): Observable<any> {
     return this.http.get(`${environment.mainAPI}/contact?pageNumber=${pageNumber}&pageSize=${pageSize}`);
   }
@@ -150,6 +145,20 @@ export class MainService {
       'Authorization': `Bearer ${token}`
     });
     return this.http.delete(`${environment.mainAPI}/project/${id}`, { headers });
+  }
+
+  DeletePrjectImage(id: number, imageId: number, token: any) {
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${token}`
+    });
+    return this.http.delete(`${environment.mainAPI}/project/${id}/images/${imageId}`, { headers });
+  }
+
+  AddNewImageToProject(id: number, images: any, token: any) {
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${token}`
+    });
+    return this.http.post(`${environment.mainAPI}/project/${id}/images`, images, { headers });
   }
 
   // posts
@@ -181,5 +190,36 @@ export class MainService {
 
   GetPublisheddPosts(pageNumber: number, pageSize: number, isApprove: boolean): Observable<any> {
     return this.http.get(`${environment.mainAPI}/post?pageNumber=${pageNumber}&pageSize=${pageSize}&isApproved=${isApprove}`);
+  }
+
+  // send email
+  SendEmail(request: any) {
+    return this.http.post(`${environment.mainAPI}/contactUs`, request);
+  }
+
+  // team
+  TeamList(pageNumber: number, pageSize: number): Observable<any> {
+    return this.http.get(`${environment.mainAPI}/teamMember?pageNumber=${pageNumber}&pageSize=${pageSize}`);
+  }
+
+  AddNewTeamMember(request: FormData, token: any) {
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${token}`
+    });
+    return this.http.post(`${environment.mainAPI}/teamMember`, request, { headers });
+  }
+
+  UpdateTeamMember(id: number, request: any, token: any) {
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${token}`
+    });
+    return this.http.put(`${environment.mainAPI}/teamMember/${id}`, request, { headers });
+  }
+
+  DeleteTeamMember(id: number, token: any) {
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${token}`
+    });
+    return this.http.delete(`${environment.mainAPI}/teamMember/${id}`, { headers });
   }
 }

@@ -10,8 +10,8 @@ import { ToastrService } from 'ngx-toastr';
   styleUrl: './contact.component.scss'
 })
 export class ContactComponent {
-  form!: FormGroup
-  email: string = 'nadertarek781@gmail.com'
+  form!: FormGroup;
+  email: string = 'khaled.ahmedsabry@yahoo.com nadertarek781@gmail.com';
 
   constructor(private fb: FormBuilder, private service: MainService, private toastr: ToastrService) { }
 
@@ -21,15 +21,16 @@ export class ContactComponent {
       email: ['', Validators.required, Validators.email],
       subject: ['', Validators.required],
       message: ['', Validators.required]
-    })
+    });
   }
 
 
   onSubmit(): void {
-    this.service.SendMessage(this.form.value).subscribe(res => {
-      this.toastr.success("Created Successfully", "Send a message")
+    this.service.SendEmail(this.form.value).subscribe(res => {
+      this.toastr.success("Thank you for contacting us. We will contact you soon.", "Sent Successfully");
+      this.form.reset();
     }, err => {
-      this.toastr.error(err.error.message, "Send a message")
+      this.toastr.error(err.error.message, "Send a message");
     })
   }
 }

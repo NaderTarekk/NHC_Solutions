@@ -150,8 +150,6 @@ export class BlogsComponent implements OnInit {
 
   GetAllPosts() {
     this.service.PostsList(this.pageNumber, 999999).subscribe((res: any) => {
-      console.log(res.items);
-      
       if (this.token) {
         this.filteredPosts = res.items;
       } else {
@@ -159,8 +157,6 @@ export class BlogsComponent implements OnInit {
       }
 
       this.totalItems = this.filteredPosts.length;
-      console.log(this.filteredPosts);
-
     })
   }
 

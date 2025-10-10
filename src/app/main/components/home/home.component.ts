@@ -10,6 +10,7 @@ import { MainService } from '../../services/main.service';
 })
 export class HomeComponent implements OnInit {
   token: string | null = null;
+  email: string = "khaled.ahmedsabry@yahoo.com";
   ipAddress!: string;
   visitors: any[] = []
   projects: any[] = []

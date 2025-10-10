@@ -66,7 +66,7 @@ export class TechComponent {
 
   GetAllTechs() {
     this.service.TechList(this.currentPage, this.pageSize).subscribe((res: any) => {
-      this.Techs = res.items
+      this.Techs = res.items;
       this.totalItems = res.totalCount;
     })
   }
