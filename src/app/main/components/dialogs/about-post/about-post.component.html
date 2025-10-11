@@ -1,10 +1,10 @@
 <h2 mat-dialog-title class="post-title">Post Details</h2>
 
 <mat-dialog-content class="post-content">
-    <div class="post-detail">
+    <div class="post-detail text-center">
         <p class="post-meta"><strong>{{ data.post.postType }}</strong></p>
         <h3 class="post-heading">{{ data.post.title }}</h3>
-        <p class="post-description">{{ data.post.content }}</p>
+        <div class="preserve-lines"> {{ data.post.content }}</div>
 
         <div *ngIf="data.post.imageUrl" class="post-image-container">
             <img [src]="data.post.imageUrl" alt="Post Image" class="post-image" />

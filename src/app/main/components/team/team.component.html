@@ -1,13 +1,13 @@
 <div class="wrapper" id="team">
 
-    <h1 class="section-title text-center wow fadeInUp">Our Team </h1>
+    <h1 class="section-title text-center wow fadeInUp">Owners </h1>
 
     <div class="container d-flex px-5">
         <button *ngIf="token != null" mat-raised-button class="mb-3 p-3 btn btn-primary "
-        (click)="openCreateTeamMemberDialog()">Add
-        New Member</button>
+            (click)="openCreateTeamMemberDialog()">Add
+            New Member</button>
     </div>
-        
+
 
     <div class="card_Container">
 
@@ -19,7 +19,9 @@
 
             <div class="content">
                 <div class="contentBx">
-                    <h3>{{member.firstName}} {{ member.lastName}}<br><span>{{member.jobTitle}}</span></h3>
+                    <h3>{{member.firstName}} {{ member.lastName}}<br>
+                        <!-- <span>{{member.jobTitle}}</span> -->
+                    </h3>
                 </div>
 
                 <button *ngIf="token != null" class="btn btn-warning p-1 mx-2"

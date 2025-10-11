@@ -48,6 +48,8 @@ import { ViewProjectDetailsComponent } from './components/dialogs/view-project-d
 import { CreateTeamMemberComponent } from './components/dialogs/create-team-member/create-team-member.component';
 import { UpdateTeamMemberComponent } from './components/dialogs/update-team-member/update-team-member.component';
 import { DeleteTeamMemberComponent } from './components/dialogs/delete-team-member/delete-team-member.component';
+import { VideoDialogComponent } from './components/dialogs/video-dialog/video-dialog.component';
+import { ImageDialogComponent } from './components/dialogs/image-dialog/image-dialog.component';
 
 @NgModule({
   declarations: [
@@ -82,6 +84,8 @@ import { DeleteTeamMemberComponent } from './components/dialogs/delete-team-memb
     CreateTeamMemberComponent,
     UpdateTeamMemberComponent,
     DeleteTeamMemberComponent,
+    VideoDialogComponent,
+    ImageDialogComponent,
   ],
   imports: [
     CommonModule,

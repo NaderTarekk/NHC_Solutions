@@ -48,7 +48,7 @@ export class HomeComponent implements OnInit {
     localStorage.removeItem("NHCToken");
     localStorage.removeItem("tokenExpiration");
 
-    this.router.navigate([""]);
+    window.location.reload();
   }
 
 }

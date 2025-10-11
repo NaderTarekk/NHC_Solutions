@@ -67,8 +67,6 @@ export class TeamComponent implements OnInit {
   GetAllTeamMembers() {
     this.service.TeamList(this.currentPage, this.pageSize).subscribe((res: any) => {
       this.members = res.items;
-      console.log(this.members);
-      
       this.totalItems = res.totalCount;
     })
   }

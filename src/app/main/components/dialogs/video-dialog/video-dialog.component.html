@@ -1,0 +1,16 @@
+<mat-dialog-content>
+    <div class="video-wrapper">
+        <!-- For YouTube or external videos -->
+        <iframe *ngIf="data.youtubeId || data.videoUrl" [src]="safeUrl" frameborder="0" allowfullscreen>
+        </iframe>
+
+        <!-- For local video files -->
+        <video *ngIf="data.localVideo" width="100%" height="auto" controls>
+            <source [src]="data.localVideo" type="video/mp4">
+        </video>
+    </div>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+    <button mat-button (click)="close()">Close</button>
+</mat-dialog-actions>

@@ -28,6 +28,10 @@ export class AboutPostComponent {
       postType: [this.data.post.postType, [Validators.required]],
       isPublished: [this.data.post.isPublished]
     });
+
+    console.log(this.data.post);
+    console.log(this.data.post.content);
+    
   }
 
   onClose(): void {

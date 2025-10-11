@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { VideoDialogComponent } from '../dialogs/video-dialog/video-dialog.component';
 
 @Component({
   selector: 'app-header',
@@ -8,4 +10,21 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
 
+  constructor(private dialog: MatDialog) { }
+
+  openVideoDialog() {
+    const dialogConfig = new MatDialogConfig();
+
+    dialogConfig.disableClose = false;
+    dialogConfig.autoFocus = true;
+    dialogConfig.width = '600px'; 
+    dialogConfig.height = 'auto';
+
+    // Pass video data
+    dialogConfig.data = {
+      youtubeId: 'https://www.youtube.com/embed/ypSBWwrEPvU?si=6UlpvX-S_SjaTg0p', 
+    };
+
+    this.dialog.open(VideoDialogComponent, dialogConfig);
+  }
 }
