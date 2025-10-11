@@ -2,7 +2,7 @@
 
     <div class="d-flex justify-content-center align-items-center wow fadeInUp" style="gap: 30px;">
         <div class="nc-blogs__head">
-            <h1 class="section-title text-center wow fadeInUp">Latest Posts</h1>
+            <h1 class="section-title text-center wow fadeInUp">Blogs & News</h1>
             <p class="nc-blogs__subtitle">posts, articles, and stories for NHC Solutions.</p>
         </div>
         <!-- <div *ngIf="token != null" class="d-flex justify-content-center mb-4 align-items-center" style="gap: 20px;">
@@ -61,7 +61,7 @@
 
                 <div class="nc-card__body">
                     <h3 class="nc-card__title">
-                        <a class="link-underline" [href]="'/blog/' + post.slug">{{ post.title }}</a>
+                        <a class="link-underline" (click)="openAboutPostDialog(post)">{{ post.title }}</a>
                     </h3>
 
                     <p class="nc-card__excerpt card_preview-text">{{ post.content }}</p>

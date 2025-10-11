@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { MainService } from '../../services/main.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -18,7 +19,7 @@ export class HomeComponent implements OnInit {
   projectPageNumber: number = 1;
   projectPageSize: number = 4;
 
-  constructor(private service: MainService) { }
+  constructor(private service: MainService, private router: Router) { }
 
   ngOnInit(): void {
     this.token = localStorage.getItem("NHCToken")
@@ -42,5 +43,12 @@ export class HomeComponent implements OnInit {
       this.projects = res;
     })
   }
-  
+
+  logout() {
+    localStorage.removeItem("NHCToken");
+    localStorage.removeItem("tokenExpiration");
+
+    this.router.navigate([""]);
+  }
+
 }

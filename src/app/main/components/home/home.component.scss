@@ -1,42 +1,42 @@
 .logo {
-    width: 250px;
+  width: 250px;
 }
 
 #home {
-    height: 90vh;
+  height: 90vh;
 }
 
 
 
 .btn-primary:hover {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .text-primary {
-    background: linear-gradient(to right, #0dcaf0, #20c997);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent !important;
+  background: linear-gradient(to right, #0dcaf0, #20c997);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent !important;
 
 }
 
 .whatsapp-float {
-    position: fixed;
-    width: max-content;
-    bottom: 100px;
-    right: 45px;
-    z-index: 1000;
+  position: fixed;
+  width: max-content;
+  bottom: 100px;
+  right: 45px;
+  z-index: 1000;
 }
 
 .whatsapp-float i {
-    border-radius: 50%;
-    transition: transform 0.2s ease-in-out;
-    color: #20c997;
-    font-size: 40px;
+  border-radius: 50%;
+  transition: transform 0.2s ease-in-out;
+  color: #20c997;
+  font-size: 40px;
 }
 
 .whatsapp-float i:hover {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 // footer
@@ -47,10 +47,17 @@
   font-family: 'Segoe UI', system-ui, sans-serif;
 
   .nc-footer-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 40px;
+    display: flex;
+    justify-content: space-evenly;
     margin-bottom: 40px;
+
+  }
+
+  @media screen and (max-width: 768px) {
+    .nc-footer-container {
+      display: block;
+      gap: 30px;
+    }
   }
 
   .footer-col {
@@ -60,7 +67,7 @@
       color: #fff;
       margin-bottom: 10px;
 
-      span { 
+      span {
         background: linear-gradient(45deg, #0dcaf0, #20c997);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -87,26 +94,33 @@
       list-style: none;
       padding: 0;
 
-      li { margin: 10px 0; }
+      li {
+        margin: 10px 0;
+      }
 
       a {
         text-decoration: none;
         color: #b8c3cc;
         transition: 0.3s;
 
-        &:hover { color: #0dcaf0; }
+        &:hover {
+          color: #0dcaf0;
+        }
       }
     }
 
     .socials {
-      display: flex; gap: 14px;
+      display: flex;
+      gap: 14px;
 
       a {
         color: #b8c3cc;
         font-size: 1.25rem;
-        width: 38px; height: 38px;
-        display: grid; place-items: center;
-        border: 1px solid rgba(255,255,255,0.08);
+        width: 38px;
+        height: 38px;
+        display: grid;
+        place-items: center;
+        border: 1px solid rgba(255, 255, 255, 0.08);
         border-radius: 10px;
         transition: all .25s ease;
 
@@ -118,7 +132,8 @@
     }
 
     .newsletter {
-      display: flex; gap: 10px;
+      display: flex;
+      gap: 10px;
 
       input {
         flex: 1;
@@ -138,7 +153,10 @@
         font-weight: 700;
         cursor: pointer;
         transition: transform .2s ease;
-        &:hover { transform: translateY(-2px); }
+
+        &:hover {
+          transform: translateY(-2px);
+        }
       }
     }
   }

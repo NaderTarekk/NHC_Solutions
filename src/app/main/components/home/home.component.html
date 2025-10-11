@@ -14,18 +14,19 @@
             <a href="#service" class="nav-item nav-link">Services</a>
             <a href="#skills" class="nav-item nav-link">Technologies</a>
             <a href="#projects" class="nav-item nav-link">Projects</a>
-            <a class="nav-item nav-link" *ngIf="token && token !== ''">Users</a>
+            <!-- <a class="nav-item nav-link" *ngIf="token && token !== ''">Users</a> -->
         </div>
         <a href="index.html" class="navbar-brand mx-5 d-none d-lg-block">
             <h1 class="text-primary fw-bold m-0 active"> <a href="#home"><img class="logo" src="img/logo.png"
-                        alt=""></a></h1>
-        </a>
-        <div class="navbar-nav me-auto py-0">
-            <a class="nav-item nav-link" *ngIf="token && token !== ''">Visitors</a>
-            <a href="#ourClients" class="nav-item nav-link">Our Clients</a>
-            <a href="#Blogs" class="nav-item nav-link">Blog & News</a>
-            <a href="#testimonials" class="nav-item nav-link">Testimonial</a>
-            <a href="#contact" class="nav-item nav-link">Contact</a>
+                alt=""></a></h1>
+            </a>
+            <div class="navbar-nav me-auto py-0">
+                <!-- <a class="nav-item nav-link" *ngIf="token && token !== ''">Visitors</a> -->
+                <a href="#ourClients" class="nav-item nav-link">Our Clients</a>
+                <a href="#Blogs" class="nav-item nav-link">Blog & News</a>
+                <a href="#testimonials" class="nav-item nav-link">Testimonial</a>
+                <a href="#contact" class="nav-item nav-link">Contact</a>
+                <button class="btn btn-outline-danger" (click)="logout()" *ngIf="token && token !== ''">Logout</button>
         </div>
     </div>
 </nav>
@@ -122,15 +123,6 @@
                 <li><a href="https://wa.me/201116770933"><i class="fa-solid fa-mobile-screen"></i> +20 1553687911</a>
                 </li>
             </ul>
-        </div>
-
-        <div class="footer-col">
-            <h3>Work With Me</h3>
-            <p>Have an idea? Let’s build it together</p>
-            <form class="newsletter" onsubmit="return false;">
-                <input type="email" placeholder="Your Email" />
-                <button type="submit">Get in touch</button>
-            </form>
         </div>
     </div>
 

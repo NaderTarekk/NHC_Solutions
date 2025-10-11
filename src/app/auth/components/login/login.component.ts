@@ -29,12 +29,27 @@ export class LoginComponent implements OnInit {
     this.service.Login(this.form.value).subscribe((res: any) => {
       this.toastr.success("Sign in successfully", "Sign In");
       localStorage.setItem("NHCToken", res.token);
+
+      const expirationTime = new Date().getTime() + 3600000;
+      localStorage.setItem("tokenExpiration", expirationTime.toString());
+
       this.router.navigate([""]);
+
+      setTimeout(() => {
+        this.logout();
+      }, 3600000);
 
     }, error => {
       this.toastr.error(error.error.message, "Sign In");
       this.loader = false;
     })
+  }
+
+  logout() {
+    localStorage.removeItem("NHCToken");
+    localStorage.removeItem("tokenExpiration");
+
+    this.router.navigate(["/login"]);
   }
 
 }
