@@ -18,7 +18,7 @@ export class VideoDialogComponent {
   ) {
     if (data.youtubeId) {
       this.safeUrl = this.sanitizer.bypassSecurityTrustResourceUrl(
-        `https://www.youtube.com/embed/ypSBWwrEPvU?si=6UlpvX-S_SjaTg0p`
+        `https://www.youtube.com/embed/CvAOGzdO_F8?si=-Iq9K4wFyKiHxsyF`
       );
     }
     else if (data.videoUrl) {

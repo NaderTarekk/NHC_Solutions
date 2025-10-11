@@ -25,7 +25,7 @@ export class CreateProjectComponent {
     this.form = this.fb.group({
       projectTitle: ['', Validators.required],
       description: ['', Validators.required],
-      demoVidUrl: [''],
+      demoVideoUrl: [''],
       projectImages: this.fb.array([])
     });
   }
@@ -65,7 +65,6 @@ export class CreateProjectComponent {
         formData.append('projectImages[' + index + '].isMainImage', image.isMainImage);
         formData.append('projectImages[' + index + '].imageFile', image.imageFile);
       });
-
 
       for (let [key, value] of formData.entries()) {
         if (value instanceof File) {

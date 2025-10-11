@@ -1,13 +1,14 @@
-[debug] [2025-10-01T14:47:34.985Z] ----------------------------------------------------------------------
-[debug] [2025-10-01T14:47:34.987Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\EL11_gazy\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
-[debug] [2025-10-01T14:47:34.988Z] CLI Version:   14.17.0
-[debug] [2025-10-01T14:47:34.988Z] Platform:      win32
-[debug] [2025-10-01T14:47:34.988Z] Node Version:  v20.19.2
-[debug] [2025-10-01T14:47:34.988Z] Time:          Wed Oct 01 2025 17:47:34 GMT+0300 (Arabian Standard Time)
-[debug] [2025-10-01T14:47:34.988Z] ----------------------------------------------------------------------
+[debug] [2025-10-11T15:06:31.215Z] ----------------------------------------------------------------------
+[debug] [2025-10-11T15:06:31.217Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\EL11_gazy\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2025-10-11T15:06:31.217Z] CLI Version:   14.17.0
+[debug] [2025-10-11T15:06:31.217Z] Platform:      win32
+[debug] [2025-10-11T15:06:31.217Z] Node Version:  v20.19.2
+[debug] [2025-10-11T15:06:31.217Z] Time:          Sat Oct 11 2025 18:06:31 GMT+0300 (Arabian Standard Time)
+[debug] [2025-10-11T15:06:31.217Z] ----------------------------------------------------------------------
 [debug] 
-[debug] [2025-10-01T14:47:34.993Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2025-10-01T14:47:34.993Z] > authorizing via signed-in user (nadertarek781@gmail.com)
+[debug] [2025-10-11T15:06:31.219Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2025-10-11T15:06:31.251Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-10-11T15:06:31.251Z] > authorizing via signed-in user (nadertarek781@gmail.com)
 [info] 
      ######## #### ########  ######## ########     ###     ######  ########
      ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
@@ -17,21 +18,11 @@
 
 You're about to initialize a Firebase project in this directory:
 
-  D:\Angular\NHC Portfolio\NHC\NHCPortfolio
+  C:\Users\EL11_gazy\Desktop\NHC-main
 
-[info] 
-=== Project Setup
-[info] 
-[info] First, let's associate this project directory with a Firebase project.
-[info] You can create multiple project aliases by running firebase use --add, 
-[info] but for now we'll just set up a default project.
-[info] 
-[debug] [2025-10-01T14:48:42.568Z] Checked if tokens are valid: true, expires at: 1759333634640
-[debug] [2025-10-01T14:48:42.568Z] Checked if tokens are valid: true, expires at: 1759333634640
-[debug] [2025-10-01T14:48:42.570Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects pageSize=100
-[debug] [2025-10-01T14:48:43.349Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects 200
-[debug] [2025-10-01T14:48:43.349Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects [omitted]
-[debug] [2025-10-01T14:49:11.138Z] ExitPromptError: User force closed the prompt with SIGINT
+[debug] [2025-10-11T15:06:32.383Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2025-10-11T15:06:32.383Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[debug] [2025-10-11T15:07:16.812Z] ExitPromptError: User force closed the prompt with SIGINT
     at Interface.sigint (C:\Users\EL11_gazy\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\@inquirer\core\dist\commonjs\lib\create-prompt.js:101:37)
     at Interface.emit (node:events:524:28)
     at Interface.emit (node:domain:489:12)
@@ -44,16 +35,16 @@ You're about to initialize a Firebase project in this directory:
     at ReadStream.onData (node:internal/readline/emitKeypressEvents:64:36)
 [error] 
 [error] Error: An unexpected error has occurred.
-[debug] [2025-10-01T14:49:14.320Z] ----------------------------------------------------------------------
-[debug] [2025-10-01T14:49:14.322Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\EL11_gazy\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
-[debug] [2025-10-01T14:49:14.322Z] CLI Version:   14.17.0
-[debug] [2025-10-01T14:49:14.322Z] Platform:      win32
-[debug] [2025-10-01T14:49:14.322Z] Node Version:  v20.19.2
-[debug] [2025-10-01T14:49:14.322Z] Time:          Wed Oct 01 2025 17:49:14 GMT+0300 (Arabian Standard Time)
-[debug] [2025-10-01T14:49:14.322Z] ----------------------------------------------------------------------
+[debug] [2025-10-11T15:08:18.934Z] ----------------------------------------------------------------------
+[debug] [2025-10-11T15:08:18.937Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\EL11_gazy\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2025-10-11T15:08:18.938Z] CLI Version:   14.17.0
+[debug] [2025-10-11T15:08:18.938Z] Platform:      win32
+[debug] [2025-10-11T15:08:18.938Z] Node Version:  v20.19.2
+[debug] [2025-10-11T15:08:18.938Z] Time:          Sat Oct 11 2025 18:08:18 GMT+0300 (Arabian Standard Time)
+[debug] [2025-10-11T15:08:18.938Z] ----------------------------------------------------------------------
 [debug] 
-[debug] [2025-10-01T14:49:14.327Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2025-10-01T14:49:14.327Z] > authorizing via signed-in user (nadertarek781@gmail.com)
+[debug] [2025-10-11T15:08:18.943Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-10-11T15:08:18.944Z] > authorizing via signed-in user (nadertarek781@gmail.com)
 [info] 
      ######## #### ########  ######## ########     ###     ######  ########
      ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
@@ -63,7 +54,7 @@ You're about to initialize a Firebase project in this directory:
 
 You're about to initialize a Firebase project in this directory:
 
-  D:\Angular\NHC Portfolio\NHC\NHCPortfolio
+  C:\Users\EL11_gazy\Desktop\NHC-main
 
 [info] 
 === Project Setup
@@ -72,10 +63,26 @@ You're about to initialize a Firebase project in this directory:
 [info] You can create multiple project aliases by running firebase use --add, 
 [info] but for now we'll just set up a default project.
 [info] 
-[info] i  If you want to create a project in a Google Cloud organization or folder, please use "firebase projects:create" instead, and return to this command when you've created the project. 
-[debug] [2025-10-01T14:50:49.053Z] Checked if tokens are valid: true, expires at: 1759333634640
-[debug] [2025-10-01T14:50:49.053Z] Checked if tokens are valid: true, expires at: 1759333634640
-[debug] [2025-10-01T14:50:49.056Z] >>> [apiv2][query] POST https://firebase.googleapis.com/v1/projects:checkProjectId [none]
-[debug] [2025-10-01T14:50:49.056Z] >>> [apiv2][body] POST https://firebase.googleapis.com/v1/projects:checkProjectId {"proposedId":"NHCSolutions"}
-[debug] [2025-10-01T14:50:49.793Z] <<< [apiv2][status] POST https://firebase.googleapis.com/v1/projects:checkProjectId 200
-[debug] [2025-10-01T14:50:49.794Z] <<< [apiv2][body] POST https://firebase.googleapis.com/v1/projects:checkProjectId {"projectIdStatus":"PROJECT_ID_NOT_VALID","suggestedProjectId":"nhcsolutions-58a9d"}
+[debug] [2025-10-11T15:08:45.831Z] Checked if tokens are valid: false, expires at: 1759333634640
+[debug] [2025-10-11T15:08:45.832Z] Checked if tokens are valid: false, expires at: 1759333634640
+[debug] [2025-10-11T15:08:45.832Z] > refreshing access token with scopes: []
+[debug] [2025-10-11T15:08:45.833Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2025-10-11T15:08:45.834Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-10-11T15:08:46.326Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2025-10-11T15:08:46.326Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-10-11T15:08:46.334Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects pageSize=100
+[debug] [2025-10-11T15:08:47.107Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects 200
+[debug] [2025-10-11T15:08:47.107Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects [omitted]
+[debug] [2025-10-11T15:13:45.918Z] ExitPromptError: User force closed the prompt with SIGINT
+    at Interface.sigint (C:\Users\EL11_gazy\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\@inquirer\core\dist\commonjs\lib\create-prompt.js:101:37)
+    at Interface.emit (node:events:524:28)
+    at Interface.emit (node:domain:489:12)
+    at [_ttyWrite] [as _ttyWrite] (node:internal/readline/interface:1125:18)
+    at ReadStream.onkeypress (node:internal/readline/interface:264:20)
+    at ReadStream.emit (node:events:536:35)
+    at ReadStream.emit (node:domain:489:12)
+    at emitKeys (node:internal/readline/utils:371:14)
+    at emitKeys.next (<anonymous>)
+    at ReadStream.onData (node:internal/readline/emitKeypressEvents:64:36)
+[error] 
+[error] Error: An unexpected error has occurred.

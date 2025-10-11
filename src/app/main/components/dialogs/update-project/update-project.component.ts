@@ -25,7 +25,7 @@ export class UpdateProjectComponent {
     this.form = this.fb.group({
       projectTitle: [this.data.project.projectTitle, Validators.required],
       description: [this.data.project.description, Validators.required],
-      demoVidUrl: [this.data.project.demoVidUrl],
+      demoVideoUrl: [this.data.project.demoVideoUrl],
       projectImages: this.fb.array([]),
       postType: 1,
       isVisible: this.data.project.isVisible

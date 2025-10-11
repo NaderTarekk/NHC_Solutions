@@ -84,3 +84,10 @@ button {
   padding: 10px 20px;
   text-transform: uppercase;
 }
+
+.preserve-lines {
+  white-space: pre-line;
+  direction: ltr;
+  text-align: left;
+}
+

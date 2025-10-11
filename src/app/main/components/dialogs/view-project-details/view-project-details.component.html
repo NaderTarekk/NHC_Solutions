@@ -3,8 +3,8 @@
   <div class="project-details">
     <div class="project-info">
       <h2 class="project-title">{{ data.projectTitle }}</h2>
-      <p class="project-description">{{ data.description }}</p>
-      <a class="project-video" href="{{ data.demoVidUrl }}" target="_blank">
+      <div class="preserve-lines"> {{ data.description }}</div>
+      <a class="project-video" *ngIf="data.demoVideoUrl" (click)="openVideoDialog(data.demoVideoUrl)">
         <button mat-raised-button color="primary" class="video-btn">
           Watch Demo Video
         </button>
@@ -15,7 +15,8 @@
       <h3>Project Images</h3>
       <div class="image-gallery">
         <div *ngFor="let image of data.projectImages" class="image-item">
-          <img [src]="image.imageUrl" (click)="openImageDialog(image.imageUrl)" alt="Image Preview" class="project-image thumb" />
+          <img [src]="image.imageUrl" (click)="openImageDialog(image.imageUrl)" alt="Image Preview"
+            class="project-image thumb" />
         </div>
       </div>
     </div>

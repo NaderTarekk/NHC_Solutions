@@ -17,12 +17,12 @@ export class HeaderComponent {
 
     dialogConfig.disableClose = false;
     dialogConfig.autoFocus = true;
-    dialogConfig.width = '600px'; 
+    dialogConfig.width = '600px';
     dialogConfig.height = 'auto';
 
     // Pass video data
     dialogConfig.data = {
-      youtubeId: 'https://www.youtube.com/embed/ypSBWwrEPvU?si=6UlpvX-S_SjaTg0p', 
+      youtubeId: 'https://www.youtube.com/embed/CvAOGzdO_F8?si=-Iq9K4wFyKiHxsyF',
     };
 
     this.dialog.open(VideoDialogComponent, dialogConfig);

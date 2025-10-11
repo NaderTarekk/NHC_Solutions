@@ -99,8 +99,6 @@ export class CreatePostComponent {
 
     this.service.CreatePost(formData, token).subscribe(res => {
       this.toastr.success("Created Successfully", "Create New Post")
-      console.log(res);
-
       this.dialogRef.close({ success: true });
     }, err => {
       this.toastr.error(err.error.message, "Create New Post")
