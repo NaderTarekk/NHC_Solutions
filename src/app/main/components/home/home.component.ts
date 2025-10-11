@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
   token: string | null = null;
-  email: string = "khaled.ahmedsabry@yahoo.com";
+  email: string = "nhcsolutionsaudi@gmail.com";
   ipAddress!: string;
   visitors: any[] = []
   projects: any[] = []

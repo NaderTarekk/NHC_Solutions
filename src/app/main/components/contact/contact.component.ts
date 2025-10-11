@@ -11,7 +11,7 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class ContactComponent {
   form!: FormGroup;
-  email: string = 'khaled.ahmedsabry@yahoo.com nadertarek781@gmail.com';
+  email: string = 'nhcsolutionsaudi@gmail.com';
 
   constructor(private fb: FormBuilder, private service: MainService, private toastr: ToastrService) { }
 

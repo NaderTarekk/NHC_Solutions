@@ -171,10 +171,6 @@ export class MainService {
       'Authorization': `Bearer ${token}`
     });
 
-    request.forEach((value: any, key: any) => {
-      console.log(key, ':', value);
-    });
-
     return this.http.post(`${environment.mainAPI}/post`, request, { headers });
   }
 
